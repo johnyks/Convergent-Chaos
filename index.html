@@ -1,27 +1,54 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
+  <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>My Website</title>
+  <meta name="color-scheme" content="light dark">
+  <title>John · Numerical playground</title>
   <style>
-    body {
-      max-width: 800px;
-      margin: 70px auto;
-      padding: 20px;
-      font-family: Arial, sans-serif;
-      line-height: 1.6;
-      color: #243247;
-      background: #f4f7fb;
-    }
+    :root { color-scheme:light dark; background:light-dark(#fff,#181818); color:light-dark(#202124,#ededed); font-family:system-ui,sans-serif; }
+    * { box-sizing:border-box; }
+    body { margin:0; }
+    main { max-width:820px; padding:48px 20px 24px; margin:auto; }
+    header { padding:0 16px 28px; border-bottom:1px solid light-dark(#e9e9e9,#343434); }
+    .eyebrow { margin:0 0 12px; font-size:13px; letter-spacing:.08em; text-transform:uppercase; color:light-dark(#676767,#aaa); }
+    h1 { font:400 clamp(40px,8vw,66px)/1.1 Georgia,serif; letter-spacing:-.035em; margin:0 0 18px; }
+    p { max-width:56ch; line-height:1.6; margin:0; }
+    .intro { padding:26px 16px 8px; }
+    h2 { font-size:17px; font-weight:500; margin:0 0 8px; }
+    .intro p { color:light-dark(#5a5a5a,#b8b8b8); font-size:14px; }
+    iframe { display:block; width:100%; height:1000px; border:0; }
+    footer { padding:16px; font-size:13px; color:light-dark(#676767,#aaa); }
+    a { color:inherit; text-underline-offset:3px; }
+    @media(max-width:480px) { main { padding:28px 8px 16px; } header { padding-bottom:22px; } }
   </style>
 </head>
 <body>
-  <h1>Your Name</h1>
-  <p>CFD and optimization engineer.</p>
-  <h2>My research</h2>
-  <p>Fuel cells, OpenFOAM, and adjoint optimization.</p>
-  <h2>Projects</h2>
-  <p>I will share my projects here.</p>
+  <main>
+    <header>
+      <!-- Replace this heading and introduction with your own bio. -->
+      <p class="eyebrow">John · Numerical playground</p>
+      <h1>A little less error.<br>A little more curiosity.</h1>
+      <p>PEM fuel cells, numerical modelling, and a small experiment you can play with.</p>
+    </header>
+    <section aria-labelledby="playground-title">
+      <div class="intro">
+        <h2 id="playground-title">Meet the cube with an ego</h2>
+        <p>He is solving x³ = 27. Watch each guess, or turn up his enthusiasm and see what happens to the residual.</p>
+      </div>
+      <iframe id="cube-toy" src="toy.html" title="Sir Cubes-a-Lot: an interactive Newton solver"></iframe>
+    </section>
+    <footer><a href="toy.html">Open the toy on its own</a></footer>
+  </main>
+  <script>
+    // Optional: fit the embed to its content as the page changes width.
+    window.addEventListener('message', event => {
+      const frame = document.getElementById('cube-toy');
+      const data = event.data;
+      if (event.source !== frame.contentWindow || data?.type !== 'sir-cubes-height' ||
+          !Number.isFinite(data.height) || data.height < 250 || data.height > 2500) return;
+      frame.style.height = Math.ceil(data.height) + 'px';
+    });
+  </script>
 </body>
 </html>
