@@ -1,0 +1,99 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#f6f5ef">
+  <title>Catch the fixed point — Convergent Chaos</title>
+  <link rel="stylesheet" href="fixed-point.css">
+  <script src="fixed-point.js" defer></script>
+</head>
+<body>
+  <main class="toy" id="toy">
+    <a class="back-link" href="../index.html#playground">← Back to the playground</a>
+    <header class="toy-heading">
+      <div>
+        <p class="eyebrow">01 / The fixed-point chase</p>
+        <h1>Meet me at the intersection.</h1>
+        <p class="intro">Pick a starting point. Let cosine do the chasing.</p>
+      </div>
+      <span class="equation" aria-label="x n plus one equals cosine of x n">xₙ₊₁ = cos(xₙ)</span>
+    </header>
+
+    <div class="workspace">
+      <section class="plot-section" aria-label="Interactive cobweb plot">
+        <div class="plot" id="plot">
+          <svg id="graph" role="img" aria-labelledby="chart-title chart-desc"></svg>
+        </div>
+        <div class="legend" aria-label="Graph legend">
+          <span><i class="swatch curve"></i>cos(x)</span>
+          <span><i class="swatch diagonal"></i>y = x</span>
+          <span><i class="swatch orbit"></i>Your orbit</span>
+        </div>
+        <p class="plot-hint"><span aria-hidden="true">↗</span> Click or tap the highlighted x-axis to start a new orbit.</p>
+      </section>
+
+      <section class="control-section" aria-label="Iteration controls">
+        <form id="exact-form">
+          <label for="guess" class="control-label">Your starting guess <span>x₀</span></label>
+          <div class="guess-row">
+            <input id="guess" type="number" min="0" max="1" step="any" value="0.2" inputmode="decimal" required aria-describedby="guess-help">
+            <button class="guess-submit" type="submit" aria-label="Run from this starting guess">↗</button>
+          </div>
+          <p class="field-help" id="guess-help">Any number between 0 and 1.</p>
+        </form>
+
+        <div class="playback">
+          <button class="button primary" id="run" type="button"><span id="run-icon" aria-hidden="true">▶</span><span id="run-label">Run the orbit</span></button>
+          <div class="secondary-controls">
+            <button class="button" id="step" type="button">Step +1</button>
+            <button class="button" id="reset" type="button">Reset</button>
+          </div>
+        </div>
+
+        <div class="speed-row">
+          <label for="speed">Speed</label>
+          <select id="speed">
+            <option value="620">Slow</option>
+            <option value="250" selected>Normal</option>
+            <option value="65">Fast</option>
+          </select>
+        </div>
+
+        <div class="status" id="status">
+          <span class="status-dot" aria-hidden="true"></span>
+          <span id="message">Ready when you are.</span>
+        </div>
+        <p class="operation" id="operation">Up to the curve. Across to the diagonal. Repeat.</p>
+      </section>
+    </div>
+
+    <div class="metrics" aria-label="Current iteration values">
+      <div class="metric"><span>Initial guess · x₀</span><output id="initial">0.200000</output></div>
+      <div class="metric"><span>Iteration · n</span><output id="iteration">0</output></div>
+      <div class="metric"><span>Current value · xₙ</span><output id="current">0.20000000</output></div>
+      <div class="metric"><span>Residual · |cos(xₙ) − xₙ|</span><output id="residual">7.80e−1</output></div>
+    </div>
+
+    <details class="explanation">
+      <summary>What am I looking at?<span aria-hidden="true">+</span></summary>
+      <p>Start with a guess, <span class="math">x₀</span>. Travel vertically to <span class="math">y = cos(x)</span> to calculate the next value, then horizontally to <span class="math">y = x</span> to use it as your new guess. The zigzag closes in on <span class="math">x* ≈ 0.739085</span>, where <span class="math">cos(x*) = x*</span>.</p>
+      <p>We stop when the residual <span class="math">|cos(xₙ) − xₙ| ≤ 10⁻⁶</span>. All angles are in radians. The little orange line is a cobweb plot. This one comes without spiders.</p>
+    </details>
+
+    <details class="history-details" id="history-details">
+      <summary><span id="history-title">Show the iteration history</span><span aria-hidden="true">+</span></summary>
+      <div class="table-scroll" tabindex="0" role="region" aria-label="Scrollable iteration history">
+        <table>
+          <caption class="sr-only">Each completed iterate and its fixed-point residual</caption>
+          <thead><tr><th scope="col">n</th><th scope="col">xₙ</th><th scope="col">|cos(xₙ) − xₙ|</th></tr></thead>
+          <tbody id="history"></tbody>
+        </table>
+      </div>
+    </details>
+    <footer class="toy-footer"><span>Small steps. Same destination.</span><span>ε = 10⁻⁶ / radians</span></footer>
+    <div id="announcement" class="sr-only" role="status" aria-live="polite" aria-atomic="true"></div>
+    <noscript><p>This numerical toy needs JavaScript. The rule is xₙ₊₁ = cos(xₙ), and its fixed point is approximately 0.739085.</p></noscript>
+  </main>
+</body>
+</html>
