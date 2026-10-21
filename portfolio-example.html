@@ -33,19 +33,19 @@
     </header>
     <section aria-labelledby="playground-title">
       <div class="intro">
-        <h2 id="playground-title">Meet the cube with an ego</h2>
-        <p>He is solving x³ = 27. Watch each guess, or turn up his enthusiasm and see what happens to the residual.</p>
+        <h2 id="playground-title">Catch the fixed point</h2>
+        <p>Choose a guess. Follow xₙ₊₁ = cos(xₙ), one iteration at a time. <a href="index.html">Visit the full portfolio</a>.</p>
       </div>
-      <iframe id="cube-toy" src="toy.html" title="Sir Cubes-a-Lot: an interactive Newton solver"></iframe>
+      <iframe id="cube-toy" src="toys/fixed-point.html?embed=1" title="Catch the fixed point: an interactive cosine iteration toy"></iframe>
     </section>
-    <footer><a href="toy.html">Open the toy on its own</a></footer>
+    <footer><a href="toys/fixed-point.html">Open the toy on its own</a></footer>
   </main>
   <script>
     // Optional: fit the embed to its content as the page changes width.
     window.addEventListener('message', event => {
       const frame = document.getElementById('cube-toy');
       const data = event.data;
-      if (event.source !== frame.contentWindow || data?.type !== 'sir-cubes-height' ||
+      if (event.source !== frame.contentWindow || data?.type !== 'convergent-chaos:toy-height' ||
           !Number.isFinite(data.height) || data.height < 250 || data.height > 2500) return;
       frame.style.height = Math.ceil(data.height) + 'px';
     });

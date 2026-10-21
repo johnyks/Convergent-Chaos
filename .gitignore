@@ -1,0 +1,6 @@
+# Local previews and browser verification output
+.DS_Store
+node_modules/
+test-results/
+*.log
+__pycache__/
