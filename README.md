@@ -1,6 +1,6 @@
 # Convergent Chaos
 
-A personal CFD and optimization portfolio for **Yannis G. Kordos**, with a numerical playground. Built with plain HTML, CSS and JavaScript. No framework, build step, CDN, external fonts, analytics or backend.
+An interactive numerical playground by **Yannis G. Kordos**, with a concise CFD and optimization profile. Built with plain HTML, CSS and JavaScript. No framework, build step, CDN, external fonts, analytics or backend.
 
 ## Run locally
 
@@ -14,7 +14,7 @@ Open http://localhost:4173. You can also open `index.html` directly in a browser
 
 ## Structure
 
-- `index.html`: introduction, freelance services, interactive playground, selected credentials and contact.
+- `index.html`: compact identity and potential-flow illustration, interactive playground, selected credentials and contact.
 - `styles.css`: responsive design, reduced-motion support and print styles.
 - `app.js`: analytic potential-flow hero illustration, section reveals, navigation state and validated iframe resizing.
 - `resume.html`, `resume.css`, `resume.js`: concise professional résumé with print/save-as-PDF support.
@@ -27,9 +27,9 @@ Open http://localhost:4173. You can also open `index.html` directly in a browser
 
 **Visual thesis:** an engineer's notebook with warm paper, deep green, lime, editorial typography and a live potential-flow field.
 
-**Content plan:** introduce the practice; explain three services; let visitors play with an actual numerical algorithm; substantiate experience; invite a project conversation.
+**Content plan:** keep the identity and potential-flow illustration compact; lead with the playable numerical experiment; follow with the engineer’s selected experience and contact links.
 
-**Interaction thesis:** a staggered hero entrance, pointer-responsive flow tracers that pause offscreen, restrained section reveals, and a step-by-step numerical cobweb. Motion preferences are respected.
+**Interaction thesis:** a compact animated identity strip, pointer-responsive flow tracers that pause offscreen, restrained section reveals, and a step-by-step numerical cobweb. Motion preferences are respected.
 
 CV content is deliberately selective: CFD, continuous adjoints, fuel cells, aerodynamic surrogates, education and scientific software. Toyota Motor Europe and NTUA appear as doctoral research hosts. No clients, commercial outcomes or performance improvements are invented. The original CV, home address and telephone number are not included in the site. Contact and profile links come from the supplied CV.
 

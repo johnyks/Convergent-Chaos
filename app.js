@@ -177,7 +177,7 @@
     context.font = `${Math.max(19, radius * .29)}px Georgia`;
     context.textAlign = 'center';
     context.fillText('what if?', 0, 8);
-    context.font = '8px "Courier New", monospace';
+    context.font = `${Math.max(5.5, Math.min(8, radius * .058))}px "Courier New", monospace`;
     context.fillStyle = 'rgba(33,58,48,.65)';
     context.fillText('EVERY GOOD MODEL STARTS HERE.', 0, Math.max(26, radius * .30));
     context.beginPath();

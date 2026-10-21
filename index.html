@@ -4,8 +4,8 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <meta name="theme-color" content="#f6f5ef">
-  <meta name="description" content="Yannis G. Kordos — independent mechanical engineer working on CFD, adjoint optimization and scientific software. Serious engineering, with a numerical playground on the side.">
-  <title>Convergent Chaos — Yannis G. Kordos · CFD & Optimization</title>
+  <meta name="description" content="An interactive numerical playground by Yannis G. Kordos. Explore iterative algorithms, convergence and fluid flow, one experiment at a time.">
+  <title>Convergent Chaos — Numerical Playground · Yannis G. Kordos</title>
   <link rel="icon" href="assets/mark.svg" type="image/svg+xml">
   <link rel="stylesheet" href="styles.css">
   <script src="app.js" defer></script>
@@ -18,7 +18,6 @@
       <span>CONVERGENT<br>CHAOS<span class="wordmark-dot">.</span></span>
     </a>
     <nav aria-label="Main navigation">
-      <a href="#expertise">The serious stuff</a>
       <a href="#playground">The playground <span class="nav-dot" aria-hidden="true"></span></a>
       <a href="#about">The human</a>
     </nav>
@@ -26,73 +25,43 @@
   </header>
 
   <main id="main">
-    <section class="hero" id="home" aria-labelledby="hero-title">
+    <section class="hero hero-compact" id="home" aria-label="Yannis G. Kordos and a potential-flow illustration">
       <div class="hero-copy">
         <p class="eyebrow hero-enter"><span class="small-cross" aria-hidden="true">✳</span> YANNIS G. KORDOS / CFD & OPTIMIZATION</p>
-        <h1 id="hero-title" class="hero-enter">Convergent<br><em>Chaos.</em><span class="title-period" aria-hidden="true">↗</span></h1>
-        <p class="hero-promise hero-enter">Making complex flows behave.<br>And algorithms a little more human.</p>
-        <p class="hero-description hero-enter">Independent mechanical engineer turning fluid dynamics, optimization, and a stubborn curiosity into useful solutions.</p>
-        <div class="hero-actions hero-enter">
-          <a class="button button-dark" href="#contact">Have a problem to solve? <span aria-hidden="true">↗</span></a>
-          <a class="text-link" href="#playground">Or, break some math <span aria-hidden="true">↓</span></a>
-        </div>
       </div>
       <div class="flow-scene" role="img" aria-label="An animated illustration of streamlines flowing around a circular obstacle. Move your pointer to shift the view.">
         <canvas id="flow-canvas" aria-hidden="true"></canvas>
-        <div class="flow-coordinate coord-top" aria-hidden="true">y ↑<br><span>01. FIELD NOTES</span></div>
+        <div class="flow-coordinate coord-top" aria-hidden="true">y ↑<br><span>FIELD NOTES</span></div>
         <div class="flow-coordinate coord-bottom" aria-hidden="true">x →<br><span>LET CURIOSITY FLOW.</span></div>
         <div class="flow-note"><span class="live-dot" aria-hidden="true"></span> POTENTIAL FLOW / A LITTLE IDEALIZED</div>
         <button class="flow-motion" id="flow-motion" type="button" hidden>Pause flow <span aria-hidden="true">Ⅱ</span></button>
         <noscript><svg class="flow-fallback" viewBox="0 0 600 500" aria-hidden="true"><g fill="none" stroke="currentColor" stroke-width="1"><path d="M0 180C140 180 150 40 300 40S460 180 600 180M0 220C130 220 150 90 300 90S470 220 600 220M0 260C150 260 160 370 300 370S450 260 600 260M0 300C150 300 160 410 300 410S450 300 600 300"/><circle cx="300" cy="230" r="100"/></g></svg></noscript>
       </div>
-      <div class="hero-footer"><span>A FREELANCE PRACTICE. A NUMERICAL PLAYGROUND.</span><a href="#expertise">SCROLL TO EXPLORE <span aria-hidden="true">↓</span></a></div>
-    </section>
-
-    <section class="expertise section-pad" id="expertise" aria-labelledby="expertise-title">
-      <div class="section-heading reveal">
-        <p class="eyebrow"><span class="section-index">01 /</span> THE SERIOUS STUFF</p>
-        <div class="heading-row"><h2 id="expertise-title">Your tricky problem.<br>My kind of <em>fun.</em></h2><p>I help turn “what if?” into a model,<br>a better design, and a clear next step.</p></div>
-      </div>
-      <div class="service-grid">
-        <article class="service reveal">
-          <div class="service-top"><span class="mono">01</span><svg viewBox="0 0 80 60" fill="none" aria-hidden="true"><path d="M0 10C25 10 25 45 80 45M0 24C28 24 34 7 80 7M0 38C29 38 40 20 80 20M0 52C28 52 42 36 80 36"/></svg></div>
-          <h3>Understand the flow.</h3><p>CFD and multiphysics modelling for the places where intuition needs a numerical second opinion.</p><p class="service-tags">CFD / FUEL CELLS / AERODYNAMICS</p>
-        </article>
-        <article class="service reveal">
-          <div class="service-top"><span class="mono">02</span><svg viewBox="0 0 80 60" fill="none" aria-hidden="true"><path d="M5 7C15 7 23 53 42 53S64 7 75 7M19 16l8 3-4 8M28 34l8 3-4 8"/><circle cx="42" cy="53" r="4"/></svg></div>
-          <h3>Find the better shape.</h3><p>Adjoint-based optimization and design exploration. Fewer blind guesses. More informed improvements.</p><p class="service-tags">ADJOINTS / SHAPE OPTIMIZATION / SURROGATES</p>
-        </article>
-        <article class="service reveal">
-          <div class="service-top"><span class="mono">03</span><svg viewBox="0 0 80 60" fill="none" aria-hidden="true"><path d="m25 15-17 15 17 15M55 15l17 15-17 15M46 7 34 53"/></svg></div>
-          <h3>Make the tools work.</h3><p>Scientific software and automated workflows that let you spend more time understanding results.</p><p class="service-tags">PYTHON / C++ / OPENFOAM / LINUX</p>
-        </article>
-      </div>
-      <p class="section-footnote reveal"><span aria-hidden="true">↳</span> Got a model that won’t converge? We already have something in common.</p>
     </section>
 
     <section class="playground section-pad" id="playground" aria-labelledby="playground-title">
-      <div class="playground-heading reveal"><p class="eyebrow"><span class="section-index">02 /</span> THE NUMERICAL PLAYGROUND</p><div class="heading-row"><h2 id="playground-title">Less black box.<br>More <em>“oh, I get it.”</em></h2><p>A small collection of numerical toys.<br>Pull a lever. Follow a guess. Enjoy the detour.</p></div></div>
+      <div class="playground-heading reveal"><p class="eyebrow"><span class="section-index">01 /</span> THE NUMERICAL PLAYGROUND</p><div class="heading-row"><h1 id="playground-title">Less black box.<br>More <em>“oh, I get it.”</em></h1><p>A small collection of numerical toys.<br>Pull a lever. Follow a guess. Enjoy the detour.</p></div></div>
       <div class="lab-layout">
+        <div class="toy-workspace reveal">
+          <div class="workspace-top"><span><i aria-hidden="true"></i> THE ITERATION STATION</span><span class="mono">LIVE / 001</span></div>
+          <iframe id="fixed-point-toy" src="toys/fixed-point.html?embed=1" title="Catch the fixed point — interactive cosine iteration experiment" loading="lazy" height="890"></iframe>
+          <noscript><p class="noscript-note">The experiment needs JavaScript. You can still explore the profile and résumé on this page.</p></noscript>
+        </div>
         <aside class="lab-notes reveal" aria-label="About the featured experiment">
           <span class="experiment-label"><span class="live-dot" aria-hidden="true"></span> EXPERIMENT 001 · READY TO PLAY</span>
-          <h3>Catch the<br>fixed point.</h3>
+          <h2>Catch the<br>fixed point.</h2>
           <p>Start with a guess. Feed it to a cosine. Feed the answer back in. Somehow, all that back-and-forth settles down.</p>
           <p>Watch it happen, one little step at a time.</p>
           <div class="formula" aria-label="x n plus one equals cosine of x n">x<sub>n+1</sub> = cos(x<sub>n</sub>)<span>THE WHOLE ALGORITHM. REALLY.</span></div>
           <a class="text-link" href="toys/fixed-point.html" target="_blank" rel="noopener">Open the toy on its own <span aria-hidden="true">↗</span></a>
           <div class="workbench"><span class="eyebrow">ON THE WORKBENCH</span><div><span>002</span><p>The downhill dilemma<small>Gradient descent</small></p><span class="coming-label">COMING NEXT</span></div><div><span>003</span><p>Go with the flow<small>Flow-field exploration</small></p><span class="coming-label">IN THE SKETCHBOOK</span></div></div>
         </aside>
-        <div class="toy-workspace reveal">
-          <div class="workspace-top"><span><i aria-hidden="true"></i> THE ITERATION STATION</span><span class="mono">LIVE / 001</span></div>
-          <iframe id="fixed-point-toy" src="toys/fixed-point.html?embed=1" title="Catch the fixed point — interactive cosine iteration experiment" loading="lazy" height="890"></iframe>
-          <noscript><p class="noscript-note">The experiment needs JavaScript. You can still explore the services and résumé on this page.</p></noscript>
-        </div>
       </div>
       <div class="playground-footer reveal"><span>NO INSTALLATION. NO EXAM AT THE END.</span><span>Just a browser and a questionable initial guess. <span aria-hidden="true">↗</span></span></div>
     </section>
 
     <section class="about section-pad" id="about" aria-labelledby="about-title">
-      <div class="about-intro reveal"><p class="eyebrow"><span class="section-index">03 /</span> THE HUMAN BEHIND THE ITERATIONS</p><h2 id="about-title">Hi, I’m Yannis.<br>I ask <em>“why?”</em><br>for a living.</h2><p class="about-lead">Mechanical engineer. Doctoral researcher.<br>Occasional negotiator with residuals.</p><p>I work at the intersection of fluid dynamics, optimization, and scientific computing. My research connects fuel-cell modelling, continuous adjoints, and machine learning with the same question: how can we make this design better?</p><a class="text-link" href="resume.html">The concise résumé <span aria-hidden="true">↗</span></a></div>
+      <div class="about-intro reveal"><p class="eyebrow"><span class="section-index">02 /</span> THE HUMAN BEHIND THE ITERATIONS</p><h2 id="about-title">Hi, I’m Yannis.<br>I ask <em>“why?”</em><br>for a living.</h2><p class="about-lead">Mechanical engineer. Doctoral researcher.<br>Occasional negotiator with residuals.</p><p>I work at the intersection of fluid dynamics, optimization, and scientific computing. My research connects fuel-cell modelling, continuous adjoints, and machine learning with the same question: how can we make this design better?</p><a class="text-link" href="resume.html">The concise résumé <span aria-hidden="true">↗</span></a></div>
       <div class="about-evidence reveal">
         <div class="evidence-heading"><span class="eyebrow">A FEW THINGS UNDER THE HOOD</span><span aria-hidden="true">↙</span></div>
         <article class="evidence-row"><span class="mono">NOW</span><div><h3>Fuel cells, meet optimization.</h3><p>Doctoral research in computational modelling and optimization for fuel cells, within the BLESSED project.</p><span class="evidence-meta">TOYOTA MOTOR EUROPE × NTUA</span></div></article>
@@ -103,11 +72,10 @@
     </section>
 
     <section class="contact section-pad" id="contact" aria-labelledby="contact-title">
-      <div class="contact-top reveal"><p class="eyebrow"><span class="section-index">04 /</span> LET’S FIND A SOLUTION</p><span class="mono">GOOD QUESTIONS WELCOME.</span></div>
-      <div class="contact-main reveal"><h2 id="contact-title">Got a little<br><em>chaos?</em></h2><div class="contact-copy"><p>A flow to understand.<br>A design to improve.<br>An idea that needs a first model.</p><a class="button button-dark" href="mailto:Johnkordos@hotmail.com">Let’s make it converge <span aria-hidden="true">↗</span></a><a class="email-label" href="mailto:Johnkordos@hotmail.com">Johnkordos@hotmail.com</a><div class="contact-socials"><a href="https://www.linkedin.com/in/yannis-kordos-2b8682134/" target="_blank" rel="noopener noreferrer">LinkedIn ↗</a><a href="https://orcid.org/0009-0005-5930-7482" target="_blank" rel="noopener noreferrer">ORCID ↗</a></div></div></div>
-      <div class="contact-bottom"><span>INDEPENDENT CFD & OPTIMIZATION ENGINEERING</span><span>Serious about the science. Curious about everything.</span></div>
+      <div class="contact-top reveal"><p class="eyebrow"><span class="section-index">03 /</span> LET’S FIND A SOLUTION</p><span class="mono">GOOD QUESTIONS WELCOME.</span></div>
+      <div class="contact-main reveal"><h2 id="contact-title">Got a little<br><em>chaos?</em></h2><div class="contact-copy"><a class="button button-dark" href="mailto:Johnkordos@hotmail.com">Let’s make it converge <span aria-hidden="true">↗</span></a><a class="email-label" href="mailto:Johnkordos@hotmail.com">Johnkordos@hotmail.com</a><div class="contact-socials"><a href="https://www.linkedin.com/in/yannis-kordos-2b8682134/" target="_blank" rel="noopener noreferrer">LinkedIn ↗</a><a href="https://orcid.org/0009-0005-5930-7482" target="_blank" rel="noopener noreferrer">ORCID ↗</a></div></div></div>
     </section>
   </main>
-  <footer class="site-footer"><span>© <span id="copyright-year">2026</span> Yannis G. Kordos</span><a href="#home" class="footer-brand">CONVERGENT CHAOS<span>↗</span></a><a href="#home">Back to the initial guess <span aria-hidden="true">↑</span></a></footer>
+  <footer class="site-footer"><span>© <span id="copyright-year">2026</span> Yannis G. Kordos</span><a href="#home" class="footer-brand">CONVERGENT CHAOS<span>↗</span></a></footer>
 </body>
 </html>
